@@ -23,6 +23,7 @@ $('.category>a').on('click',function(){
     
     $('#logoutModal').modal('show')
   })
+  
   $('.logout').on('click',function(){
     $.ajax({
       type:'get',
