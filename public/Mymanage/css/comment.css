@@ -100,3 +100,8 @@ body.active{
   height: 100%;
   overflow: hidden;
 }
+.echarts_left,
+.echarts_right{
+  width: 50%;
+  height: 400px;
+}
