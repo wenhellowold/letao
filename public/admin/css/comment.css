@@ -28,8 +28,8 @@ body{
 body.active{
   padding-left: 0
 }
-.table-bordered th,
-.table-bordered td{
+.table.table-bordered tr,
+.table.table-bordered td{
   text-align: center;
   vertical-align: middle;
 }
