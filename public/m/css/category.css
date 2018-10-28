@@ -1,0 +1,44 @@
+.left {
+  width: 90px;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.left li {
+  width: 100%;
+  height: 50px;
+  background-color: pink;
+  border-bottom: 1px solid red;
+  border-right: 1px solid red;
+}
+.left li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+}
+.left li.active {
+  background-color: #fff;
+  border-right: none;
+}
+.right {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.right li {
+  float: left;
+  width: 33.33%;
+}
+.right li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.right li a img {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto;
+}
