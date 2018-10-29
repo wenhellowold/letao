@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
   <link rel="icon" href="./favicon.ico">
   <link rel="stylesheet" href="./css/commen.css">
-  <link rel="stylesheet" href="./css/category.css">
-  <title>乐淘商城-分类</title>
+  <link rel="stylesheet" href="./css/search.css">
+  <title>乐淘商城-首页</title>
 </head>
 <body>
   <div class="lt_container">
@@ -17,28 +17,20 @@
       <a href="javascript:history.back()" class="icon_logo">
         <span class="mui-icon mui-icon-arrowleft"></span>
       </a>
-      <h4>乐淘云购</h4>
+      <h4>搜索中心</h4>
       <a href="search.html" class="icon_search">
         <span class="fa fa-search"></span>
       </a>
     </div>
     <div class="lt_main">
-      <div class="left">
-        <div class="mui-scroll-wrapper">
-          <div class="mui-scroll">
-           <ul>
-             
-           </ul>
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <div class="search">
+            <input type="text" placeholder="请输入搜索关键字">
+            <button class="mui-btn mui-btn-blue">搜索</button>
           </div>
-        </div>
-      </div>
-      <div class="right">
-        <div class="mui-scroll-wrapper">
-          <div class="mui-scroll">
-            <ul>
-
-            </ul>
-          </div>
+          <!-- 挖个大坑 -->
+          <div class="history"></div>
         </div>
       </div>
     </div>
@@ -50,7 +42,7 @@
             <p>首页</p>
           </a>
         </li>
-        <li class="active">
+        <li>
           <a href="category.html">
             <span class="fa fa-bars"></span>
             <p>分类</p>
@@ -71,26 +63,34 @@
       </ul>
     </div>
   </div>
+
   <script type="text/html" id="tpl">
-    {{each rows v i}}
-    <li class='{{i===0?'active':''}}' data-id='{{v.id}}'><a href="#">{{v.categoryName}}</a></li>
-    {{/each}}
+    {{if list.length === 0}}
+      <p>没有搜索记录</p>
+    {{else}}
+    <!-- <div class="history"> -->
+        <div class="title mui-clearfix">
+          <span class="mui-pull-left">搜索历史</span>
+          <span class="mui-pull-right fa fa-trash btn-empty">清空历史</span>
+        </div>
+        <div class="content">
+          <ul>
+            {{each list v i}}
+            <li class="mui-clearfix">
+              <a href="#" class="mui-pull-left">{{v}}</a>
+              <span data-idx="{{i}}" class="mui-icon mui-icon-closeempty mui-pull-right btn_delete"></span>
+            </li>
+           {{/each}}
+          </ul>
+        </div>
+      <!-- </div> -->
+  {{/if}}
   </script>
 
-  <script type="text/html" id="tpl2">
-    {{each rows v i}}
-    <li>
-      <a href="#">
-        <img src="{{v.brandLogo}}" alt="">
-        <p>{{v.brandName}}</p>
-      </a>
-    </li>
-    {{/each}}
-  </script>
   <script src="./lib/mui/js/mui.js"></script>
   <script src="./lib/zepto/zepto.min.js"></script>
   <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./js/commen.js"></script>
-  <script src="./js/category.js"></script>
+  <script src="./js/search.js"></script>
 </body>
 </html>
