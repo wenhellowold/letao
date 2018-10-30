@@ -24,3 +24,12 @@ function getSearch(){
   }
   return obj
 }
+function getHistory() {
+  var history = localStorage.getItem('history')
+  history = JSON.parse(history) || [];
+  return history
+}
+function render() {
+  var history = getHistory();
+  $('.history').html(template('tpl', { list: history }))
+}

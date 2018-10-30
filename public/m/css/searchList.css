@@ -12,3 +12,6 @@
   font-size: 12px;
   color: #666;
 }
+.sort a.active {
+  color: orange;
+}

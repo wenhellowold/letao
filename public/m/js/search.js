@@ -3,15 +3,7 @@ $(function () {
   // localStorage.setItem()
   // JSON.stringify
 
-  function getHistory() {
-    var history = localStorage.getItem('history')
-    history = JSON.parse(history) || [];
-    return history
-  }
-  function render() {
-    var history = getHistory();
-    $('.history').html(template('tpl', { list: history }))
-  }
+  
   render()
 
   // 点击删除按钮,删除该条记录
@@ -58,7 +50,6 @@ $(function () {
     }
     history.unshift(val)
     localStorage.setItem('history',JSON.stringify(history))
-    render()
     location.href = 'searchList.html?key='+val
   })
 })
